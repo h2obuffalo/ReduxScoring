@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import ScoreButton from './components/ScoreButton.jsx';
+import Score from './components/Score.jsx';
 
-const App = ({handlePlayer1, handlePlayer2, player1Score, player2Score, handleReset, serving}) => (
+const App = ({handlePlayer1, handlePlayer2, player1Score, player2Score, handleReset, serving, winner}) => (
     <React.Fragment>
         {/* header */}
         <header className="page-header">
@@ -11,20 +13,20 @@ const App = ({handlePlayer1, handlePlayer2, player1Score, player2Score, handleRe
         {/* scores */}
         <div className="row">
             <div className="col-xs-6">
-                <p>Player 1 {(serving) ? <span className="pull-right label label-success">Serving</span> : null} </p>
-                <p className="well">{/* player 1 score */}{player1Score}</p>
-                <button className="btn btn-primary" onClick={handlePlayer1}>+</button>
+                <p>Player 1 </p> {(serving) ? <span className="pull-right label label-success">Serving</span> : null}
+                <Score playerScore={player1Score} />
+                {!winner === 0 ? null :<ScoreButton winner={winner} handlePlayer={handlePlayer1} />}
             </div>
 
             <div className="col-xs-6">
-                <p>Player 2 {!(serving) ? <span className="pull-right label label-success">Serving</span> : null}</p>
+                <p>Player 2 </p> {!(serving) ? <span className="pull-right label label-success">Serving</span> : null}
                 <p className="well">{/* player 2 score */}{player2Score}</p>
-                <button className="btn btn-primary" onClick={handlePlayer2}>+</button>
+                {!winner === 0 ? null :<ScoreButton winner={winner} handlePlayer={handlePlayer2} />}
             </div>
         </div>
 
         { /* winner message */}
-        <h2 className="jumbotron">Player {/* winning player here */} wins!</h2>
+        {(!winner === 0) ? null : <h2 className="jumbotron">Player {winner} wins!</h2>}
 
         <hr />
 
