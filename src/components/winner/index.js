@@ -1,9 +1,9 @@
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import Winner from './Winner';
 
 const mapStateToProps = state => {
     return {
-       winner: winner,
+       winner: state.winner,
     }
 }
 

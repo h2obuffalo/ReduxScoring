@@ -9,10 +9,6 @@ import { Provider } from 'react-redux';
 ReactDOM.render(
 
     <Provider store={store} >
-        <App
-            handlePlayer1={ () => store.dispatch({type: "score", player: 1})}
-            handlePlayer2={ () => store.dispatch({type: "score", player: 2})}
-            handleReset={ () => store.dispatch({type: "reset"})}
-        />
+        <App />
     </Provider>, document.getElementById('root'));
 
