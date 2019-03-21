@@ -11,6 +11,7 @@ class Settings extends Component {
       name2: this.props.name2,
       winNo: this.props.winNo,
       serve: this.props.serve,
+      submit:this.props.submit,
     };
     this.handleName1 = this.handleName1.bind(this);
     this.handleName2 = this.handleName2.bind(this);
@@ -46,10 +47,11 @@ class Settings extends Component {
 
   render() {
     let { name1, name2, winNo, serve } = this.state;
-    return (
+
+      return  (this.state.submit) ? null :(
       <Fragment>
       <h2>Settings</h2>
-      <form onSubmit={ (e) => this.props.handleSave(e, this.state) }>
+      <form onSubmit={ (e) => this.props.handleSave(e, this) }>
         <div className="form-group">
           <Input
           label="Player 1 name"

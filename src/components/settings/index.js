@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
             name2:state.name2,
             winNo:state.winNo,
             serve:state.serve,
+            submit:state.submit,
         };
 };
 
@@ -17,7 +18,8 @@ const mapDispatchToProps = dispatch => {
 
         handleSave: (e, data) => {
             e.preventDefault();
-            dispatch(set(data));
+            data.setState({submit: !data.state.submit});
+            dispatch(set(data.state));
         }
     };
 };

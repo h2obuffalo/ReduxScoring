@@ -8,6 +8,7 @@ const initial = {
     name1:"",
     name2:"",
     history:[],
+    submit:false,
 };
 
 export default initial;
