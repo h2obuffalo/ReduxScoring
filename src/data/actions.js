@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+
 export const score = ( player )  => {
     return {
         type: 'score',
@@ -11,7 +14,7 @@ export const reset = () => {
     };
 };
 
-export const set = ({ name1, name2, winNo, serve }) => {
+export const settings = ({ name1, name2, winNo, serve }) => {
     return {
         type: 'settings',
         name1: name1,

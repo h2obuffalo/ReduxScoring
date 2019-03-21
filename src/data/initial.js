@@ -9,6 +9,7 @@ const initial = {
     name2:"",
     history:[],
     submit:false,
+    loaded:false,
 };
 
 export default initial;
