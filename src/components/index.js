@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import Settings from './Settings';
+import App from './App';
 // import { settings as set } from '../../data/actions';
-import { postGame } from '../../data/api';
 
 
 const mapStateToProps = (state) => {
@@ -14,13 +13,4 @@ const mapStateToProps = (state) => {
         };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-
-        handleSave: (state) => {
-            dispatch(postGame(state));
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Settings);
+export default connect(mapStateToProps)(App);

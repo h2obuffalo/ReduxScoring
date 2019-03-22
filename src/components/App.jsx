@@ -9,9 +9,9 @@ import Loading from './loading/';
 
 // import Score from './components/Score.jsx';
 
-const App = () => (
+const App = ({submit, winner}) => (
     <Loading>
-        <React.Fragment>
+       {submit ?  <React.Fragment>
             {/* header */}
             <header className="page-header">
                 <h1>PongPing</h1>
@@ -26,8 +26,11 @@ const App = () => (
             <hr />
             { /* reset button */}
             <Reset />
-            <Settings />
         </React.Fragment>
+            :
+        <React.Fragment>
+            <Settings />
+        </React.Fragment>}
     </Loading>
 );
 

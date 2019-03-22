@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import Scorer from './Scorer';
-import { score } from '../../data/actions';
+import { putScore } from '../../data/api';
 
 const mapStateToProps = state => {
     return {
     playerScore: state.player2,
-    serving: state.serving === 2,
+    serving: state.serving,
     winner: state.winner,
     player: state.name2,
     }
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        handlePlayer: () => dispatch(score(2)),
+        handlePlayer: () => dispatch(putScore(2)),
     }
 }
 
